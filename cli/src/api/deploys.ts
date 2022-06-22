@@ -45,7 +45,7 @@ export async function waitDeploy(command: Command, { payload: squid }: HttpRespo
       case DeployStatus.DEPLOYING:
         CliUx.ux.action.start('◷ Preparing your squid');
         if (deploy.failed) {
-          command.error(`❌ An error occurred during building process.${traceDebug}`);
+          command.error(`❌ An error occurred during deployment process.${traceDebug}`);
         }
         break;
       case DeployStatus.IMAGE_BUILDING:
@@ -63,7 +63,7 @@ export async function waitDeploy(command: Command, { payload: squid }: HttpRespo
         }
 
         if (deploy.failed) {
-          command.error(`❌ An error occurred during deploying process.${traceDebug}`);
+          command.error(`❌ An error occurred during initializing process.${traceDebug}`);
         }
         break;
       case DeployStatus.DONE:
